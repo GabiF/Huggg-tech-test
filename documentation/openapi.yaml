@@ -1,0 +1,91 @@
+openapi: 3.0.0
+info:
+  title: Brands API Contract
+  version: 1.0.0
+  license:
+    name: unlicensed
+    url: https://undefined
+
+servers:
+  - url: http://localhost:3000
+
+security:
+  - {}
+
+paths:
+  /v1/brands/{brandId}:
+    get:
+      summary: Get a Brand by its id
+      security:
+        - {}
+      operationId: getBrandById
+      parameters:
+        - in: path
+          name: brandId
+          schema:
+            type: string
+            format: uuid
+          example: a715b837-f4fc-48ba-ba0a-7f53b6dc59c5
+          required: true
+      responses:
+        200:
+          description: Brand found for the given id
+        404:
+          description: No brand found for the given id
+  /v1/brands/{brandId}/products:
+    get:
+      summary: Get a Brand's Products by its id
+      security:
+        - {}
+      operationId: getBrandProductsById
+      parameters:
+        - in: path
+          name: brandId
+          schema:
+            type: string
+            format: uuid
+          example: a715b837-f4fc-48ba-ba0a-7f53b6dc59c5
+          required: true
+      responses:
+        200:
+          description: Returns a list of products for the given brand id
+        404:
+          description: No brand found for the given id or no products found for the given brand
+  /v1/brands/{brandId}/stores:
+    get:
+      summary: Get a Brand's Products by its id
+      security:
+        - {}
+      operationId: getBrandStoresById
+      parameters:
+        - in: path
+          name: brandId
+          schema:
+            type: string
+            format: uuid
+          example: a715b837-f4fc-48ba-ba0a-7f53b6dc59c5
+          required: true
+      responses:
+        200:
+          description: Returns a list of stores for the given brand id
+        404:
+          description: No brand found for the given id or no stores found for the given brand
+  /v1/products/{productId}/stores:
+    get:
+      summary: Get a Product's Stores by its id
+      security:
+        - { }
+      operationId: getProductStoresById
+      parameters:
+        - in: path
+          name: productId
+          schema:
+            type: string
+            format: uuid
+          example: 5a3fe6f7-7796-44ca-84fe-70d4f751527d
+          required: true
+      responses:
+        200:
+          description: Returns a list of stores for the given product id
+        404:
+          description: No product found for the given id or no stores found for the given product
