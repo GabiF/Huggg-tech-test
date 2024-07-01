@@ -1,0 +1,27 @@
+{
+  "name": "tech-test",
+  "version": "1.0.0",
+  "description": "Thanks for your interest in joining our team! This is a quick little test which is an example of the sort of work we do here at huggg.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/server.js",
+    "prestart": "npm run build",
+    "clean": "rm -rf dist",
+    "build": "tsc",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.14.9",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.5",
+    "typescript": "^5.5.2"
+  }
+}
